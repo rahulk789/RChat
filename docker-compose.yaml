@@ -1,0 +1,12 @@
+
+services:
+  
+  server:
+    container_name: server
+    image: node:v18.0.0-alpine
+    ports: 
+      - 8000:8000
+    build:
+      dockerfile: Dockerfile
+
+    
