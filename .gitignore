@@ -1,4 +1,7 @@
 .terraform*
 node_modules/
 terraform.tfstate
-
+package.json
+package-lock.json
+Procfile
+terraform.tfstate.backup
