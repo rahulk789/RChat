@@ -18,7 +18,8 @@ height: 50px;
 }
 .message{
 	background-color: wheat;
-	width: 30%;
+	color: black;
+    width: 30%;
 	padding: 10px;
 	margin: 17px 2px;
 	border: 2px solid black;
