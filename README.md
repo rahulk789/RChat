@@ -6,6 +6,18 @@ run `sudo npm i socket.io nodemon -g`
 
 # Docker
 You can also set up the server simply by running `sudo docker compose up`
+to create a docker image , run `sudo docker build -t rchat-server-image .`
+To run the docker image and access it on localhost `sudo docker run -d -p 8000:8000 rchat-server-image`
+
+# K8s
+To access it on kubernetes:
+`sudo k0s kubectl apply -f k8s-deployment.yaml`
+To delete the pod
+`sudo k0s kubectl delete pod rchat-server-pod`
+Run the following to check if the pod is running
+`sudo k0s kubectl get pods`
+Run the following to access the pod on localhost
+`sudo k0s kubectl port-forward pod/rchat-server-pod 8000:8000`
 
 # Fancy GUI
 
