@@ -1,4 +1,4 @@
-name: Node.js CI
+name: Docker Image CI
 
 on:
   push:
@@ -13,9 +13,8 @@ jobs:
 
 
     steps:
-    - uses: actions/checkout@v3
-    
-    - name: docker build
-    - run: docker build . 
+    - uses: actions/checkout@v3 
+    - name: Build the docker image
+      run: docker build . 
     
    
