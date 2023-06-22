@@ -25,4 +25,7 @@ jobs:
     - run: npm ci
     - run: npm install
     - run: npm install -g socket.io nodemon
-    - run: nodemon nodeServer/index.js
+    - name: docker build
+      uses: actions/docker/cli@master
+      with:
+        args: build -t rahulk789/rchat-server-image 
