@@ -17,6 +17,12 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+    
+    - name: docker build
+      uses: actions/docker/cli@master
+      with:
+        args: build -t rahulk789/rchat-server-image 
+    
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
       with:
@@ -25,7 +31,4 @@ jobs:
     - run: npm ci
     - run: npm install
     - run: npm install -g socket.io nodemon
-    - name: docker build
-      uses: actions/docker/cli@master
-      with:
-        args: build -t rahulk789/rchat-server-image 
+   
