@@ -8,6 +8,7 @@ run `sudo npm i socket.io nodemon -g`
 You can also set up the server simply by running `sudo docker compose up`
 to create a docker image , run `sudo docker build -t rchat-server-image .`
 To run the docker image and access it on localhost `sudo docker run -d -p 8000:8000 rchat-server-image`
+For api image `sudo docker run -d -p 4099:4099 rchat-api-deployment`
 
 # K8s
 To access it on kubernetes:
@@ -16,8 +17,10 @@ To delete the pod
 `sudo k0s kubectl delete pod rchat-server-pod`
 Run the following to check if the pod is running
 `sudo k0s kubectl get pods`
-Run the following to access the service on localhost
+Run the following to access the server service on localhost
 `sudo k0s kubectl port-forward service/rchat-server-deployment 8000:8000`
+Run the following to access the api service on localhost
+`sudo k0s kubectl port-forward service/rchat-api-deployment 4099:4099`
 
 # Monitoring
 To deploy grafana on k8s run:
