@@ -83,7 +83,16 @@ spec:
         - name: prometheus-storage-volume
           mountPath: /prometheus
       restartPolicy: Always
-
+      initContainers:
+      - name: prometheus-data-permission-fix
+        image: busybox
+        command: ["/bin/chmod","-R","777", "/etc/prometheus"]
+        command: ["/bin/chmod","-R","777", "/prometheus"]
+        volumeMounts:
+        - name: prometheus-config-volume
+          mountPath: /etc/prometheus
+        - name: prometheus-storage-volume
+          mountPath: /prometheus
       volumes:
       - name: prometheus-config-volume
         configMap:

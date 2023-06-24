@@ -16,8 +16,18 @@ To delete the pod
 `sudo k0s kubectl delete pod rchat-server-pod`
 Run the following to check if the pod is running
 `sudo k0s kubectl get pods`
-Run the following to access the pod on localhost
-`sudo k0s kubectl port-forward pod/rchat-server-pod 8000:8000`
+Run the following to access the service on localhost
+`sudo k0s kubectl port-forward service/rchat-server-deployment 8000:8000`
+
+# Monitoring
+To deploy grafana on k8s run:
+`sudo k0s kubectl apply -f k8s-deployment.yaml`
+Run the following to access grafana on localhost
+`sudo k0s kubectl port-forward service/grafana 3000:3000`
+To deploy prometheus on k8s run:
+`sudo k0s kubectl apply -f k8s-deployment.yaml`
+Run the following to access prometheus on localhost
+`sudo k0s kubectl port-forward service/prometheus-service 9090:8080`
 
 # Fancy GUI
 
