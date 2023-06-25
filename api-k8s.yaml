@@ -1,0 +1,58 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+ name: rchat-api-deployment
+ labels:
+   app: rchat-api-deployment
+spec:
+ selector:
+  matchLabels:
+   app: rchat-api-deployment
+ template:
+  metadata:
+   labels:
+    app: rchat-api-deployment
+  spec:
+   containers:
+   - image: rahulk789/rchat-api-deployment
+     name: rchat-api-deployment
+     imagePullPolicy: Always
+     ports:
+       - containerPort: 4099
+     resources:
+       requests:
+          cpu: "50m"
+          memory: "100Mi"
+       limits:
+          memory: "256Mi"
+          cpu: "100m"
+---
+apiVersion: v1
+kind: Service
+metadata:
+    name: rchat-api-deployment
+    labels:
+      app: rchat-api-deployment
+spec:
+    ports:
+    - name: "rchat-api-deployment"
+      targetPort: 4099
+      port: 4099
+      nodePort: 30153
+      protocol: TCP
+    selector:
+       app: rchat-api-deployment
+    type: NodePort
+#apiVersion: v1
+#kind: Pod
+#metadata:
+#  name: rchat-server-pod
+#spec:
+#  containers:
+#  - name: rchat-server-container
+#    image: rahulk789/rchat-server-image
+#    ports: 
+#    - containerPort: 8000 
+#  imagePullSecrets:
+#  - name: rahulk789
+ 
