@@ -2,7 +2,7 @@ name: Docker Image CI
 
 on:
   push:
-    branches: [ "k8s" ]
+    branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
 
