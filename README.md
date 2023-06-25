@@ -21,6 +21,8 @@ Run the following to access the server service on localhost
 `sudo k0s kubectl port-forward service/rchat-server-deployment 8000:8000`
 Run the following to access the api service on localhost
 `sudo k0s kubectl port-forward service/rchat-api-deployment 4099:4099`
+To test scaling run the following with correct IP (or localhost)
+` while true; do curl http://10.106.224.66:4099/ ; done;`
 
 # Monitoring
 To deploy grafana on k8s run:
