@@ -1,7 +1,7 @@
 # RChat
-What is all this you say? I strongly suggest you to read the following gist before going ahead
-https://gist.github.com/rahulk789/616643b75337f255c9403009456003d0
-Implemented using node.js  and socket.io ; This is an attempt to create a whatsapp clone.
+What is all this you say? I strongly suggest you to read the following gist before going ahead:
+https://gist.github.com/rahulk789/616643b75337f255c9403009456003d0 \
+Implemented using node.js  and socket.io ; This is an attempt to create a whatsapp clone. \
 run `sudo npm i socket.io nodemon -g`
 `nodemon nodeServer/index.js`
 `<your browser> index.html`
