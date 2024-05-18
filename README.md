@@ -4,7 +4,9 @@ https://gist.github.com/rahulk789/616643b75337f255c9403009456003d0 \
 Implemented using node.js  and socket.io ; This is an attempt to create a whatsapp clone. \
 run `sudo npm i socket.io nodemon -g`
 `nodemon nodeServer/index.js`
-`<your browser> index.html`
+`<your browser> index.html` \
+
+![image](https://github.com/rahulk789/RChat/assets/83643646/b0daea66-207e-4657-ab87-fae29e4a1c5b)
 
 # Docker
 You can also set up the server simply by running `sudo docker compose up`
